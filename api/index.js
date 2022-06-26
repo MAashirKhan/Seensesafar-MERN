@@ -28,6 +28,11 @@ mongoose.connection.on("disconnected", () =>{
 
 
 //middlewares
+app.use((req, res, next)=>{
+    console.log("Hii Middleware")
+    next()
+})
+
 app.use(express.json());
 
 
@@ -35,6 +40,8 @@ app.use("/api/auth", authRoute);
 app.use("/api/hotels", hotelRoute);
 app.use("/api/rooms", roomRoute);
 app.use("/api/users", userRoute);
+
+
 
 app.listen(8800, ()=>{
     connect()
