@@ -4,9 +4,8 @@ import Hotel from "../models/Hotel.js";
 //Create a router f9r the auth routes 
 const router = express.Router();
 
-//Create
-router.post("/", async (req, res) => {
-    
+//Create new hotel
+router.post("/", async (req, res) => {    
     const newHotel = new Hotel(req.body);
     try {
         //Save the hotel
@@ -18,7 +17,7 @@ router.post("/", async (req, res) => {
     }
 })
 
-//Update
+//Update the hotel details
 router.put("/:id", async (req, res) => {
     try {
         //Update the hotel
