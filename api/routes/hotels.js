@@ -71,7 +71,7 @@ router.get("/", async (req, res, next) => {
         const hotels = await Hotel.find();
         res.status(200).json(hotels);
     } catch (error) {
-        // it returns the error to the client
+        // it returns the error to the server to client
         res.status(500).json(error);
     }
 })
