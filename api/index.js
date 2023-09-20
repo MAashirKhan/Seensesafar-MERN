@@ -7,8 +7,11 @@ import roomRoute from "./routes/rooms.js";
 import userRoute from "./routes/users.js";
 
 
+
 const app = express();
 dotenv.config()
+
+const port = process.env.PORT || 3000;
 
 // Async Function for Connection
 const connect = async () => {    
@@ -42,8 +45,8 @@ app.use("/api/rooms", roomRoute);
 app.use("/api/users", userRoute);
 
 
-
-app.listen(8800, ()=>{
+//Main Connect function
+app.listen(port, ()=>{
     connect()
-    console.log("Connected to Backend");
+    console.log("Server is running on Port", port);
 })
